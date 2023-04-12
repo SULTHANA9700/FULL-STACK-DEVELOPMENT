@@ -1,0 +1,58 @@
+
+Microsoft Windows [Version 10.0.19042.2251]
+(c) Microsoft Corporation. All rights reserved.
+
+Z:\>node --version
+v18.14.2
+
+Z:\>node
+Welcome to Node.js v18.14.2.
+Type ".help" for more information.
+> 2+3
+5
+> console.log("hello");
+hello
+undefined
+>
+>
+>
+
+Z:\>cd Y20CS165
+
+Z:\Y20CS165>cd mean
+
+
+
+1ST PROGRAM
+
+
+Z:\Y20CS165\mean>node myfirst.js
+^C
+
+#myfirst.js file
+var http=require('http');
+http.createServer(function(req,res){
+res.writeHead(200,{'Content-Type':'text/html'});
+res.end('Hello World!');
+}).listen(8080);
+
+link to see output for 1st program http://localhost:8080/myfirst
+
+2ND PROGRAM
+
+Z:\Y20CS165\mean>node myfirst1.js
+
+#myfirst1.js file
+var http=require('http');
+var dt=require('./myfirstmodule');
+http.createServer(function(req,res){
+res.writeHead(200,{'Content-Type':'text/html'});
+res.write("Current Date and Time is :<br>"+"<b style='color:red;'>"+dt.myDateTime()+"</b>");
+res.write("<br>url pattern:"+req.url);
+res.end();
+}).listen(8090);
+
+#myfirstmodule.js file
+exports.myDateTime=function(){
+return Date();
+}
