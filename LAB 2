@@ -1,0 +1,113 @@
+# STRONG NUMBER
+
+#strong.js
+
+function fact(n){
+let f=1;
+let i=1;
+while(i<=n){
+f=f*i;
+i++;
+}
+return f;
+}
+const prompt=require('prompt-sync')({sigint:true});
+const num=prompt("Enter a number");
+let s=0;
+let num1=Number(num);
+const k=Number(num1);
+while(num1!=0){
+n=num1%10;
+s=s+fact(n);
+num1=Math.floor(num1/10);
+}
+if(s===k){
+console.log("Strong number");
+}else{
+console.log("Not a strong number");
+}
+
+#command prompt
+Microsoft Windows [Version 10.0.18362.30]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+Z:\>cd Y20CS165
+
+Z:\Y20CS165>cd mean
+
+Z:\Y20CS165\mean>node --version
+v18.14.2
+
+Z:\Y20CS165\mean>npm install prompt-sync
+
+added 3 packages in 1s
+npm notice
+npm notice New minor version of npm available! 9.5.0 -> 9.6.4
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v9.6.4
+npm notice Run npm install -g npm@9.6.4 to update!
+npm notice
+
+Z:\Y20CS165\mean>node strong.js
+Enter a number145
+Strong number
+
+Z:\Y20CS165\mean>node strong.js
+Enter a number1
+Strong number
+
+Z:\Y20CS165\mean>node strong.js
+Enter a number2
+Strong number
+
+Z:\Y20CS165\mean>node strong.js
+Enter a number4
+Not a strong number
+
+Z:\Y20CS165\mean>node strong.js
+Enter a number40585
+Strong number
+
+#GUESS THE NUMBER
+
+#guess.js
+const prompt=require('prompt-sync')({sigint:true});
+const numberToGuess=Math.floor(Math.random()*25)+1;
+let flag=false;
+while(!flag){
+let guess=prompt('Guess a number from 1 to 25:');
+guess=Number(guess);
+if(guess===numberToGuess){
+console.log('Congrats, you got it!');
+flag=true;
+}
+else
+{
+console.info('Sorry, Guess again!');
+}
+}
+
+#command prompt
+
+Z:\Y20CS165\mean>node guess.js
+Guess a number from 1 to 25:3
+Sorry, Guess again!
+Guess a number from 1 to 25:5
+Sorry, Guess again!
+Guess a number from 1 to 25:6
+Sorry, Guess again!
+Guess a number from 1 to 25:12
+Sorry, Guess again!
+Guess a number from 1 to 25:22
+Sorry, Guess again!
+Guess a number from 1 to 25:13
+Sorry, Guess again!
+Guess a number from 1 to 25:15
+Sorry, Guess again!
+Guess a number from 1 to 25:14
+Sorry, Guess again!
+Guess a number from 1 to 25:17
+Sorry, Guess again!
+Guess a number from 1 to 25:18
+Sorry, Guess again!
+Guess a number from 1 to 25:19
+Congrats, you got it!
