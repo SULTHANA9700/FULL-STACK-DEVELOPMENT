@@ -1,0 +1,25 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './myfolder.component.html',
+  styles:[
+   ` 
+    h1{
+      font-size:40px;
+      border:1px solid blue;
+    }
+    .p1{
+      font-size:30px;
+      border:1px solid red;
+    }
+    `
+  ]
+})
+export class AppComponent {
+  title = 'neha';
+  today : Date;
+  constructor(){
+    this.today=new Date();
+  }
+}
